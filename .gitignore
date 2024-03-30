@@ -1,0 +1,4 @@
+*.yml
+*.sh
+*.ipynb_checkpoints/*
+*.env/*
