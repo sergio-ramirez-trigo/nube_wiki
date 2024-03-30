@@ -164,3 +164,15 @@ Añadimos los siguientes fragmentos de código
 crear_nube("Aranjuez")
 crear_nube("Toledo")
 ```
+
+Hacemos un commit de los nuevos cambios
+
+!["Nubes"](imagenes/14-Nubes.png)
+
+Hacemos un merge con `devel`
+
+!["Merge devel"](imagenes/15-Merge_devel.png)
+
+Hacemos un merge con `master`
+
+!["Merge master"](imagenes/16-Merge_master.png)
