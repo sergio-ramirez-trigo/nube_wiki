@@ -176,3 +176,45 @@ Hacemos un merge con `devel`
 Hacemos un merge con `master`
 
 !["Merge master"](imagenes/16-Merge_master.png)
+
+### 5. Resolver conflictos entre ramas <a name="id5"></a>
+
+Realizamos un cambio en la rama `master`
+
+```
+crear_nube("Madrid")
+```
+
+Hacemos un commit de estos cambios
+
+!["Cambio master"](imagenes/17-Cambio_master.png)
+
+Realizamos un cambio diferente sobre la misma línea de código pero en la rama `features_ejemplos`
+
+```
+crear_nube("getafe")
+```
+
+Hacemos el commit de los cambios
+
+!["Cambio features"](imagenes/18-Cambio_features.png)
+
+Hacemos un merge a `devel`
+
+!["Merge devel"](imagenes/19-Merge_devel.png)
+
+Hacemos un merge a `master`. Encontramos el siguiente confilto:
+
+!["Conflicto"](imagenes/20-Conflicto.png)
+
+Resolvemos este, quedándonos con los cambios realizos en la rama `master`, porque consideramos que esta prevalece sobre las demás
+
+!["Resolver conflicto"](imagenes/21-Resolver_conflicto.png)
+
+Por último, hacemos un commit en `master` para dejar el conflicto resuesto
+
+!["Resolver conflicto"](imagenes/22-Commit.png)
+
+Actualizamos los commits con todos los cambios realizados y los subimos a GitHub.
+
+Añadimos también el fichero yml con las librerías del proyecto.
