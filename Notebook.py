@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[ ]:
 
 
 import wikipedia
@@ -23,7 +23,7 @@ print(wikipedia.search("Python", results = 3))
 print(wikipedia.suggest("Madriz"))
 
 
-# In[8]:
+# In[ ]:
 
 
 # Que página queremos descargar
@@ -40,7 +40,7 @@ text= re.sub(r'==.*?==+', '', text) # eliminamos los headers
 text= text.replace('\n', '') # eliminamos los saltos de línea
 
 
-# In[12]:
+# In[ ]:
 
 
 import matplotlib.pyplot as plt
@@ -69,7 +69,7 @@ wordcloud= WordCloud(width= 3000, height= 2000, random_state=1,
 plot_cloud(wordcloud)
 
 
-# In[15]:
+# In[ ]:
 
 
 def crear_nube(x) :
@@ -86,4 +86,16 @@ def crear_nube(x) :
     nube = plot_cloud(wordcloud)
     
     return(nube)
+
+
+# In[ ]:
+
+
+crear_nube("Aranjuez")
+
+
+# In[ ]:
+
+
+crear_nube("Toledo")
 

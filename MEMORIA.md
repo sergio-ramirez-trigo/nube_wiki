@@ -6,6 +6,8 @@ Fecha: 30-03-2024
 **INDICE**
 1. [Crear entorno git y primer commit](#id1)
 2. [Añadir código y crear primera estructura Git](#id2)
+3. [Crear rama devel y merge con master](#id3)
+4. [Crear rama features_ejemplos](id#4)
 
 ### 1. Crear entorno git y primer commit <a name="id1"></a>
 
@@ -104,6 +106,61 @@ Instalamos `wordcloud` y añadimos el nuevo fragmento de código
 > conda install conda-forge::wordcloud
 
 ```
+# Importamos el paquete para hacer la nube de palabras
+from wordcloud import WordCloud
 
+# Genaramos la nube
+wordcloud= WordCloud(width= 3000, height= 2000, random_state=1,
+                     background_color='white',colormap='viridis',
+                     collocations=False, stopwords= stop_words + ["Python", "puede", "pueden"]).generate(text)
+plot_cloud(wordcloud)
 ```
 
+!["Generar nube de palabras"](imagenes/9-Commit_5.png)
+
+
+### 3. Crear rama devel y merge con master <a name="id3"></a>
+
+Creamos la rama `devel`
+
+!["Crear rama devel"](imagenes/10-Crear_rama_devel.png)
+
+Añadimos el siguiente fragmento de código
+
+```
+def crear_nube(x) :
+    wikipedia.set_lang("es")
+    wiki = wikipedia.page(x)
+
+    text= wiki.content
+    text= re.sub(r'==.*?==+', '', text) # eliminamos los headers
+    text= text.replace('\n', '') # eliminamos los saltos de línea
+    
+    wordcloud= WordCloud(width= 3000, height= 2000, random_state=1,
+                         background_color='white',colormap='viridis',
+                         collocations=False, stopwords= stop_words+ [x]).generate(text)
+    nube = plot_cloud(wordcloud)
+    
+    return(nube)
+```
+
+Creamos un commit en la rama `devel` con la nueva función
+
+!["Commit devel"](imagenes/11-Commit_6.png)
+
+Hacemos un merge  un merge con `master`
+
+!["Merge master"](imagenes/12-Merge_master.png)
+
+### 4. Crear rama features_ejemplos <a name="id4"></a>
+
+Creamos la rama `features_ejemplos`
+
+!["Rama features_ejemplos"](imagenes/13-Crear_rama_features.png)
+
+Añadimos los siguientes fragmentos de código
+
+```
+crear_nube("Aranjuez")
+crear_nube("Toledo")
+```
