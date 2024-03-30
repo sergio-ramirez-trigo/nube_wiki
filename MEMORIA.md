@@ -46,3 +46,22 @@ Antes de comenzar a añadir nuestro código, creamos un script para convertir nu
 
 Ahora, agregamos el código nuevo y hacemos un commit.
 
+```
+stop_words= get_stop_words('es')
+len(stop_words)
+print(wikipedia.languages())
+                           
+#fijamos el idioma a español
+wikipedia.set_lang("es")
+print(wikipedia.search("Python"))
+print(wikipedia.search("Python", results = 3))
+print(wikipedia.suggest("Madriz"))
+```python
+
+!["Uso wikipedia"](imagenes/6-Uso_wikipedia.png)
+
+Creamos un nuevo commit con las nuevas funcionalidades:
+
+!["Uso wikipedia"](imagenes/7-Commit_3.png)
+
+Instalamos matplotlib y añ

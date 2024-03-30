@@ -39,3 +39,19 @@ text= wiki.content
 text= re.sub(r'==.*?==+', '', text) # eliminamos los headers
 text= text.replace('\n', '') # eliminamos los saltos de línea
 
+
+# In[11]:
+
+
+import matplotlib.pyplot as plt
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+# Creamos una función para generar el gráfico
+def plot_cloud(wordcloud):
+    # fijamos el tamaño
+    plt.figure(figsize=(40, 30))
+    # plotde la imagen
+    plt.imshow(wordcloud)
+    # sin ejes
+    plt.axis("off")
+
