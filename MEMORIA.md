@@ -7,7 +7,8 @@ Fecha: 30-03-2024
 1. [Crear entorno git y primer commit](#id1)
 2. [Añadir código y crear primera estructura Git](#id2)
 3. [Crear rama devel y merge con master](#id3)
-4. [Crear rama features_ejemplos](id#4)
+4. [Crear rama features_ejemplos](#id4)
+5. [Resolver conflictos entre ramas](#id5)
 
 ### 1. Crear entorno git y primer commit <a name="id1"></a>
 
