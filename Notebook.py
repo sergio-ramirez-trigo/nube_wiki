@@ -40,7 +40,7 @@ text= re.sub(r'==.*?==+', '', text) # eliminamos los headers
 text= text.replace('\n', '') # eliminamos los saltos de línea
 
 
-# In[11]:
+# In[12]:
 
 
 import matplotlib.pyplot as plt
@@ -54,4 +54,17 @@ def plot_cloud(wordcloud):
     plt.imshow(wordcloud)
     # sin ejes
     plt.axis("off")
+
+
+# In[ ]:
+
+
+# Importamos el paquete para hacer la nube de palabras
+from wordcloud import WordCloud
+
+# Genaramosla nube
+wordcloud= WordCloud(width= 3000, height= 2000, random_state=1,
+                     background_color='white',colormap='viridis',
+                     collocations=False, stopwords= stop_words + ["Python", "puede", "pueden"]).generate(text)
+plot_cloud(wordcloud)
 

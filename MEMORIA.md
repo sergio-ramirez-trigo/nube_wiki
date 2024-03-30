@@ -56,12 +56,54 @@ wikipedia.set_lang("es")
 print(wikipedia.search("Python"))
 print(wikipedia.search("Python", results = 3))
 print(wikipedia.suggest("Madriz"))
-```python
+```
 
 !["Uso wikipedia"](imagenes/6-Uso_wikipedia.png)
 
 Creamos un nuevo commit con las nuevas funcionalidades:
 
-!["Uso wikipedia"](imagenes/7-Commit_3.png)
+```
+# Que página queremos descargar
+wiki = wikipedia.page('Python')
 
-Instalamos matplotlib y añ
+# Sacamos el texto de la página
+text= wiki.content
+
+# Sacamos el texto de la página
+text= wiki.content
+
+# Cleantext
+text= re.sub(r'==.*?==+', '', text) # eliminamos los headers
+text= text.replace('\n', '') # eliminamos los saltos de línea
+```
+
+!["Leer página"](imagenes/7-Commit_3.png)
+
+Instalamos `matplotlib` y añadimos el nuevo fragmento de código
+
+> conda install matplotlib
+
+```
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+# Creamos una función para generar el gráfico
+def plot_cloud(wordcloud):
+    # fijamos el tamaño
+    plt.figure(figsize=(40, 30))
+    # plotde la imagen
+    plt.imshow(wordcloud)
+    # sin ejes
+    plt.axis("off")
+```
+
+!["Crear función"](imagenes/8-Commit_4.png)
+
+Instalamos `wordcloud` y añadimos el nuevo fragmento de código
+
+> conda install conda-forge::wordcloud
+
+```
+
+```
+
